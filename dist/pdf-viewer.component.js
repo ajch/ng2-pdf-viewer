@@ -258,7 +258,9 @@ var PdfViewerComponent = (function () {
                 _this._pdfViewer.currentPageNumber = _this._page;
             });
         }
-        this.updateSize();
+       this.resizeTimeout = setTimeout(function () {
+            _this.updateSize();
+        }, 100);
     };
     PdfViewerComponent.prototype.renderPage = function (pageNumber) {
         var _this = this;
